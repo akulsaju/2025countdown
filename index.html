@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colorful Countdown</title>
+    <title>Dynamic Countdown</title>
     <style>
         body {
             margin: 0;
@@ -56,5 +56,32 @@
         <div id="countdown">00 Days : 00 Hours : 00 Minutes : 00 Seconds</div>
         <p>Get ready for the best event ever!</p>
     </div>
+
+    <script>
+        // Set the date for the countdown
+        const eventDate = new Date("December 31, 2024 23:59:59").getTime();
+
+        // Update the countdown every second
+        const timer = setInterval(() => {
+            const now = new Date().getTime();
+            const timeLeft = eventDate - now;
+
+            if (timeLeft >= 0) {
+                // Time calculations
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                // Display the result
+                document.getElementById("countdown").innerHTML =
+                    `${days} Days : ${hours} Hours : ${minutes} Minutes : ${seconds} Seconds`;
+            } else {
+                // If the countdown is finished
+                clearInterval(timer);
+                document.getElementById("countdown").innerHTML = "The fun has begun!";
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
