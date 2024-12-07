@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Countdown to New Year</title>
+  <title>Countdown to New Year 2025</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
@@ -13,51 +13,51 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background-color: #000000; /* Set background to black */
-      color: #C3CBDE;
       margin: 0;
+      background: linear-gradient(45deg, #FF4186, #41DDFF, #C3CBDE);
+      background-size: 600% 600%;
+      animation: gradientAnimation 5s ease infinite;
+      color: #FFFFFF;
       flex-direction: column;
     }
 
-    .container {
-      text-align: center;
-      color: #FF4186;
-    }
-
     h1 {
-      font-size: 2.5rem;
-      color: #FF4186;
+      font-size: 3rem;
+      text-align: center;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      cursor: pointer;
     }
 
     #countdown {
-      font-size: 2rem;
-      color: #41DDFF;
+      font-size: 2.5rem;
+      text-align: center;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
       margin-top: 1rem;
+      cursor: pointer;
     }
 
-    .input-group {
-      margin-top: 20px;
-      font-size: 1rem;
-      color: #FF4186;
+    h1:hover, #countdown:hover {
+      animation: scaleUp 0.3s ease-in-out forwards;
     }
 
-    select, input[type="time"] {
-      font-family: 'Press Start 2P', sans-serif;
-      font-size: 1rem;
-      margin: 0 10px;
-      color: #41DDFF;
-      background-color: #000000;
-      border: 2px solid #FF4186;
-      padding: 5px;
+    @keyframes gradientAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes scaleUp {
+      0% { transform: scale(1); }
+      100% { transform: scale(1.1); }
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <h1>Countdown to New Year 2025</h1>
-    <div id="countdown">Loading...</div>
-  </div>
+  <h1>Countdown to New Year 2025</h1>
+  <div id="countdown">Loading...</div>
 
   <script>
     const countdownElement = document.getElementById("countdown");
@@ -79,7 +79,7 @@
       if (timeLeft > 0) {
         countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
       } else {
-        countdownElement.innerHTML = "Happy New Year 2025!";
+        countdownElement.innerHTML = "Happy New Year!";
       }
     }
 
