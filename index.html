@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorful Countdown</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(45deg, #ff6ec7, #ffc857, #41ddff, #ff4186);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+            color: white;
+            text-align: center;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-shadow: 0px 0px 10px #ffffff, 0px 0px 20px #ff6ec7;
+        }
+
+        #countdown {
+            font-size: 2.5rem;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: 3px dashed white;
+            border-radius: 15px;
+            text-shadow: 0px 0px 5px #fff;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-top: 10px;
+            color: #ffc857;
+            text-shadow: 0px 0px 5px #ff4186;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Countdown to the Fun!</h1>
+        <div id="countdown">00 Days : 00 Hours : 00 Minutes : 00 Seconds</div>
+        <p>Get ready for the best event ever!</p>
+    </div>
+</body>
+</html>
